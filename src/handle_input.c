@@ -6,7 +6,8 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:39:38 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/13 15:39:39 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/13 18:45:41 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void handle_input(int keycode, t_game *game)
