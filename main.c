@@ -6,25 +6,28 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:35:25 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/19 16:11:48 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/19 17:42:07 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-int main(int argc, char **argv) {
-    t_game game;
+int main(int argc, char **argv)
+{
+	t_data *data;
 
-    if (argc != 2)
-	{
-        ft_printf("Usage: ./so_long <map_file.ber>\n");
-        return (1);
-    }
-    init_game(&game);
-    game_loop(&game);
-    return (0);
+	data = initialize_data();
+	if (!data)
+		return (1);
+
+
+
+	free(data->textures);
+	free(data->map);
+	free(data);
+
+	return 0;
 }
-
 
 // int	close_window(void *mlx, void *win)
 // {
@@ -54,11 +57,11 @@ so_long/
 │   ft_printf/           # ft_printf ou sua implementação equivalente
 │
 └─── src/                # Código-fonte separado por funcionalidades
-    │   init_game.c      # Inicialização do jogo
-    │   handle_input.c   # Manipulação de teclas (movimentos)
-    │   render_map.c     # Renderização do mapa
-    │   game_loop.c      # Lógica principal do jogo
-    └─── assets/         # Recursos gráficos (texturas)
-         maps/           # Mapas .ber
+	│   init_game.c      # Inicialização do jogo
+	│   handle_input.c   # Manipulação de teclas (movimentos)
+	│   render_map.c     # Renderização do mapa
+	│   game_loop.c      # Lógica principal do jogo
+	└─── assets/         # Recursos gráficos (texturas)
+		 maps/           # Mapas .ber
 
 */
