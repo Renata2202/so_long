@@ -6,29 +6,44 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:35:25 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/13 17:09:37 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/19 16:11:48 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-int	close_window(void *mlx, void *win)
-{
-	mlx_destroy_window(mlx, win);
-	mlx_destroy_display(mlx);
-	exit(0);
+int main(int argc, char **argv) {
+    t_game game;
+
+    if (argc != 2)
+	{
+        ft_printf("Usage: ./so_long <map_file.ber>\n");
+        return (1);
+    }
+    init_game(&game);
+    game_loop(&game);
+    return (0);
 }
 
-int	main(void)
-{
-	void	*mlx;
-	void	*win;
 
-	mlx = mlx_init();
-	win = mlx_new_window(mlx, 800, 800, "so_long");
-	mlx_hook(win, 17, 1L << 17, close_window, mlx);
-	mlx_loop(mlx);
-}
+// int	close_window(void *mlx, void *win)
+// {
+// 	mlx_destroy_window(mlx, win);
+// 	mlx_destroy_display(mlx);
+// 	exit(0);
+// }
+
+// int	main(void)
+
+// {
+// 	void	*mlx;
+// 	void	*win;
+
+// 	mlx = mlx_init();
+// 	win = mlx_new_window(mlx, 800, 800, "so_long");
+// 	mlx_hook(win, 17, 1L << 17, close_window, mlx);
+// 	mlx_loop(mlx);
+// }
 
 /*
 so_long/
