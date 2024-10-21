@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:35:25 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/21 15:46:32 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:18:51 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,22 @@ int main(int argc, char **argv)
 	if (!data)
 		return (1);
 
-	// Assuma que o map_data já foi preenchido com o mapa e suas dimensões
-	if (check_map_shape(&map_data))
-		printf("Erro: O mapa não é quadrado ou retangular.\n");
-	if (check_map_walls_and_chars(&map_data))
-		printf("Erro: O mapa não está cercado por paredes ou contém caracteres inválidos.\n");
-	return (0);
+	// Supondo que o map_data já foi preenchido com o mapa e suas dimensões
+	if (check_map_shape(data->map) || check_map_walls_and_chars(data->map))
+	{
+		ft_printf("Erro: Mapa inválido.\n");
+		free(data->textures);
+		free(data->map);
+		free(data);
+		return (1);
+	}
+
+	// Código para o loop principal do jogo aqui (game loop, etc.)
 
 	free(data->textures);
 	free(data->map);
 	free(data);
-
-	return 0;
+	return (0);
 }
 
 
@@ -64,10 +68,10 @@ so_long/
 │
 └─── src/                # Código-fonte separado por funcionalidades
 	│   init_game.c      # Inicialização do jogo
-	│   handle_input.c   # Manipulação de teclas (movimentos)
+	│   handle_input.c   # VERIFICACAO DOS MAPAS
 	│   render_map.c     # Renderização do mapa
-	│   game_loop.c      # Lógica principal do jogo
+	│   game_loop.c      # Lógica principal do jogo E Manipulação de teclas (movimentos)
 	└─── assets/         # Recursos gráficos (texturas)
-		 maps/           # Mapas .ber
+
 
 */
