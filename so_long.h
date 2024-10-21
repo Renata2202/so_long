@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:38:14 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/21 15:47:31 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/21 17:03:31 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,10 @@ typedef struct s_data
 t_data *initialize_data(void);
 
 // handle_input.c
-int check_extension(char *file);
-int check_map_walls_and_chars(t_map *map_data);
-int check_map_shape(t_map *map_data);
+int		check_extension(char *file);
+int		check_map_walls_and_chars(t_map *map_data);
+int		check_map_shape(t_map *map_data);
+int		check_map_elements(t_map *map_data);
+void	count_map_elements(t_map *map_data, int *player, int *exit, int *cltb);
 
 #endif

@@ -6,25 +6,28 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:39:55 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/21 16:09:19 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:32:38 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "so_long.h"
 
-t_data *initialize_data(void)
+t_data	*initialize_data(void)
 {
-	t_data *data = (t_data *)malloc(sizeof(t_data));
+	t_data	*data;
+
+	data = (t_data *)malloc(sizeof(t_data));
 	if (!data)
 	{
 		ft_printf("Erro ao alocar memória para data.\n");
-		return NULL;
+		return (NULL);
 	}
 	data->textures = (t_textures *)malloc(sizeof(t_textures));
 	if (!data->textures)
 	{
 		free(data);
 		ft_printf("Erro ao alocar memória para textures.\n");
-		return NULL;
+		return (NULL);
 	}
 	data->map = (t_map *)malloc(sizeof(t_map));
 	if (!data->map)
@@ -32,9 +35,9 @@ t_data *initialize_data(void)
 		free(data->textures);
 		free(data);
 		ft_printf("Erro ao alocar memória para map.\n");
-		return NULL;
+		return (NULL);
 	}
-	return data;
+	return (data);
 }
 
 // void init_game(t_game *game)
