@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:35:25 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/19 17:42:07 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:46:32 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ int main(int argc, char **argv)
 	if (!data)
 		return (1);
 
-
+	// Assuma que o map_data já foi preenchido com o mapa e suas dimensões
+	if (check_map_shape(&map_data))
+		printf("Erro: O mapa não é quadrado ou retangular.\n");
+	if (check_map_walls_and_chars(&map_data))
+		printf("Erro: O mapa não está cercado por paredes ou contém caracteres inválidos.\n");
+	return (0);
 
 	free(data->textures);
 	free(data->map);
@@ -28,6 +33,7 @@ int main(int argc, char **argv)
 
 	return 0;
 }
+
 
 // int	close_window(void *mlx, void *win)
 // {

@@ -6,11 +6,10 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:39:55 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/19 17:39:06 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:09:19 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
 
 t_data *initialize_data(void)
 {
@@ -38,7 +37,6 @@ t_data *initialize_data(void)
 	return data;
 }
 
-
 // void init_game(t_game *game)
 // {
 //     game->mlx = mlx_init();
@@ -46,4 +44,3 @@ t_data *initialize_data(void)
 //     game->moves = 0;
 //     // carregar o mapa e outros componentes
 // }
-
